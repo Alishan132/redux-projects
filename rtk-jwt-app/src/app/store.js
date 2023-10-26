@@ -8,7 +8,9 @@ export const store = configureStore({
     auth: authReducer,
   },
   middleware: (getDefaultMiddleware) => {
-    getDefaultMiddleware().concat(apiSlice.middleware);
+    const middle = getDefaultMiddleware().concat(apiSlice.middleware);
+    console.log("middle", middle);
+    return middle;
   },
   devTools: true,
 });
